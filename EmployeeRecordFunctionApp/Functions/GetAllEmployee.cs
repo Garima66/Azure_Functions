@@ -14,7 +14,7 @@ namespace EmployeeRecordFunctionApp.Functions
     public class GetAllEmployee
     {
         [Function("GetAllEmployees")]
-        public HttpResponseData Run([HttpTrigger(AuthorizationLevel.Function,"Post")] HttpRequestData req)
+        public HttpResponseData Run([HttpTrigger(AuthorizationLevel.Function,"Get")] HttpRequestData req)
         {
             var response=req.CreateResponse(HttpStatusCode.OK);
             response.WriteAsJsonAsync(EmployeeRepository.Employees);
